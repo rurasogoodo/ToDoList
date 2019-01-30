@@ -10,6 +10,7 @@ import Foundation
 import UserNotifications
 import UIKit
 
+//создаем массив словарей для данных о задачах
 var ToDoItems: [[String: Any]] {
     get {
         if let array = UserDefaults.standard.array(forKey: "ToDoDataKey") as? [[String: Any]] {
@@ -18,7 +19,6 @@ var ToDoItems: [[String: Any]] {
             return []
         }
     }
-    
     set {
         //сохраняем данные массива словарей в UserDefaults
         UserDefaults.standard.set(newValue, forKey: "ToDoDataKey")
@@ -71,5 +71,6 @@ func setBadge() {
             totalBadgeNumber += 1
         }
     }
+    //устанавливаем бейджу иконки приложения количество дел, которые нужно завершить
     UIApplication.shared.applicationIconBadgeNumber = totalBadgeNumber
 }
