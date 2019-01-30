@@ -117,6 +117,7 @@ class TableViewController: UITableViewController {
         }    
     }
 
+    //функция - вызывается при выборе ячейки таблицы
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
